@@ -4,8 +4,8 @@ import banner from '../../../assests/Banner.png'
 const Banner = () => {
     return (
         <div>
-            <div className="w-full h-[900px] bg-[#07332f] ">
-                <div className="flex justify-evenly pt-32">
+            <div className="w-full h-[800px] bg-[#07332f] mb-32">
+                <div className="flex justify-evenly pt-32 max-w-screen-3xl mx-auto">
                     <div className="w-[650px] space-y-12 pt-32">
                         <h1 className="text-white text-7xl font-medium">Your Best Medical Help Center</h1>
                         <p className="text-white">Lorem Ipsum is simply dummy text they are printing typesetting has <br /> been the industry’s stardard.</p>
