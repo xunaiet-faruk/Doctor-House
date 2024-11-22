@@ -19,7 +19,7 @@ const Feedback = () => {
         return () => {
             clearInterval(intervalId);
         };
-    }, [currentSlider]);
+    }, [currentSlider,nextSlider]);
     
     const isSmallScreen = window.innerWidth <= 768;
     return (

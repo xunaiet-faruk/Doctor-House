@@ -1,11 +1,12 @@
-import { IoTimeOutline } from "react-icons/io5";
+import {  IoTimeOutline } from "react-icons/io5";
+import { CiLocationOn } from "react-icons/ci";
 
 const Info = () => {
     return (
         <div className='max-w-screen-xl mx-auto mb-32'>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 '>
                 <div className='bg-[#07332F] w-[370px] h-[180px] pt-12 rounded-xl'>
-                    <div className="flex justify-center items-center gap-4">
+                    <div className="flex justify-center items-center gap-4 -ml-10">
                         <IoTimeOutline  className="text-5xl text-white"/>
                         <h4 className="text-xl text-white font-semibold">Opening Hours</h4>
 
@@ -16,8 +17,8 @@ const Info = () => {
                     </div>
                 </div>
                 <div className='bg-[#F7A582] w-[370px] h-[180px] pt-12 rounded-xl'>
-                    <div className="flex justify-center items-center gap-4">
-                        <IoTimeOutline className="text-5xl text-white" />
+                    <div className="flex justify-center items-center gap-4 -ml-10">
+                        <CiLocationOn className="text-5xl text-white" />
                         <h4 className="text-xl text-white font-semibold">Our Location</h4>
 
                     </div>
@@ -27,7 +28,7 @@ const Info = () => {
                     </div>
                 </div>
                 <div className='bg-[#07332F] w-[370px] h-[180px] pt-12 rounded-xl'>
-                    <div className="flex justify-center items-center gap-4">
+                    <div className="flex justify-center items-center gap-4 -ml-10">
                         <IoTimeOutline className="text-5xl text-white" />
                         <h4 className="text-xl text-white font-semibold">Opening Hours</h4>
 

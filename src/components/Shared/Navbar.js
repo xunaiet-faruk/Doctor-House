@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect } from 'react';
 import logo from '../../assests/Logo.png';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const NavBar = () => {
     const [dropDownState, setDropDownState] = useState(false);
@@ -34,25 +35,42 @@ const NavBar = () => {
         };
     }, []);
 
+    const Navlink = [
+        {
+            title : 'home',
+            path : '/'
+        },
+        {
+            title : 'about',
+            path : '/about'
+        },
+        {
+            title : 'appoinment',
+            path : '/appoinment'
+        },
+        {
+            title : 'Login',
+            path : '/Login'
+        },
+       
+    ]
+
     return (
-        <div className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${isScrolled ? 'bg-black bg-opacity-10' : 'bg-transparent'}`}>
+        <div className={`fixed top-0 bg-red-600 left-0 right-0 z-50 transition-colors duration-300 pt-3 ${isScrolled ? 'bg-black bg-opacity-10' : 'bg-transparent'}`}>
             <nav className="max-w-screen-2xl mx-auto flex items-center justify-between px-4 py-2 text-white">
                 <div className="scale-100 cursor-pointer rounded-2xl px-3 py-2 text-xl font-semibold text-white transition-all duration-200 hover:scale-110">
                     <Image src={logo} alt="logo" className="w-32" />
                 </div>
                 <ul className="hidden items-center justify-between gap-10 md:flex">
-                    <li className="group flex cursor-pointer flex-col">
-                        Home<span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-white transition-all duration-300 group-hover:w-full"></span>
-                    </li>
-                    <li className="group flex cursor-pointer flex-col">
-                        About<span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-white transition-all duration-300 group-hover:w-full"></span>
-                    </li>
-                    <li className="group flex cursor-pointer flex-col">
-                        Appointment<span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-white transition-all duration-300 group-hover:w-full"></span>
-                    </li>
-                    <li className="group flex cursor-pointer flex-col">
-                        Login<span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-white transition-all duration-300 group-hover:w-full"></span>
-                    </li>
+                  {
+                    Navlink.map((nav)=><Link key={nav.path} href={nav.path}>
+                    
+                        <li className="group flex cursor-pointer flex-col">
+                            {nav.title}<span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-white transition-all duration-300 group-hover:w-full"></span>
+                        </li>
+                    
+                    </Link>)
+                  }
                 </ul>
                 <div ref={dropDownMenuRef} onClick={() => setDropDownState(!dropDownState)} className="relative flex transition-transform md:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="cursor-pointer">
@@ -66,6 +84,7 @@ const NavBar = () => {
                             <li className="cursor-pointer px-6 py-2 text-white hover:bg-sky-600">Services</li>
                             <li className="cursor-pointer px-6 py-2 text-white hover:bg-sky-600">About</li>
                             <li className="cursor-pointer px-6 py-2 text-white hover:bg-sky-600">Contact</li>
+                            <li className="cursor-pointer px-6 py-2 text-white hover:bg-sky-600">Login</li>
                         </ul>
                     )}
                 </div>
